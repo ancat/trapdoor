@@ -13,7 +13,7 @@ ENV.instance_eval do
   def [](key)
     value = OLD_HASH.call key
     return value unless value.nil?
-    return @backend[key]
+    return @backend[key] if @smuggling
   end
 
   def []=(key, value)
