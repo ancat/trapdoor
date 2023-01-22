@@ -2,13 +2,13 @@ lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |s|
-  s.name = "smuggle-env"
-  s.version = "0.3.0"
+  s.name = "trapdoor"
+  s.version = "0.4.0"
   s.authors = ["OMAR"]
   s.summary = "Expose sensitive values to your environment without leaking them"
-  s.description = "smuggle-env"
+  s.description = "trapdoor"
   s.license = "MIT"
-  s.homepage = "https://github.com/ancat/smuggle-env"
+  s.homepage = "https://github.com/ancat/trapdoor"
 
   s.files = Dir["README.md", "lib/**/*.rb"]
 
