@@ -1,3 +1,6 @@
+require './lib/fs'
+require './lib/hash'
+
 ENV.instance_eval do
   OLD_ASSIGN = ENV.method(:[]=)
   OLD_HASH = ENV.method(:[])

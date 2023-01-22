@@ -1,6 +1,3 @@
-require './lib/hash'
-require './lib/fs'
-
 require './lib/smuggle-env.rb'
 
 puts "This should be nil because we haven't configured anything yet:\n#{ENV['API_PRIVATE_KEY']}"
