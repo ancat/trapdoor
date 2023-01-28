@@ -1,4 +1,4 @@
-require './lib/smuggle-env.rb'
+require './lib/trapdoor.rb'
 
 puts "This should be nil because we haven't configured anything yet:\n#{ENV['API_PRIVATE_KEY']}"
 current_directory = File.expand_path(File.dirname(__FILE__))
