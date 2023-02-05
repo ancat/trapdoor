@@ -10,6 +10,7 @@ module TrapdoorCore
 
     define_singleton_method(:[], self.method(:hash_get))
     define_singleton_method(:[]=, self.method(:hash_set))
+    define_singleton_method(:to_h, self.method(:to_h))
     define_singleton_method(:trapdoor_set?, ->() { true })
   end
 
@@ -32,9 +33,12 @@ module TrapdoorCore
   end
 
   def to_h
-    OLD_TO_H.call.merge(@backend.hash.map { |k,v|
+    original = OLD_TO_H.call.to_h
+    original += @backend.loaded.map { |k|
       [k, "**REDACTED**"]
-    }.to_h)
+    } if @backend.respond_to? :loaded
+
+    return original
   end
 
   def inspect
