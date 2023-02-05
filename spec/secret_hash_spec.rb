@@ -1,7 +1,7 @@
 require './lib/core'
 require './lib/hash'
 
-RSpec.describe TrapdoorCore do
+RSpec.describe Secret_Hash do
   context 'after loading' do
     let(:original_env) {{
       "HOME" => "/home/me",
@@ -15,12 +15,12 @@ RSpec.describe TrapdoorCore do
     }}
 
     let(:hash_backend) {
-      Secret_Hash.new(hash: in_memory_secrets)
+      described_class.new(hash: in_memory_secrets)
     }
 
     let(:dummy) {
       original_env.tap { |c|
-        c.extend(described_class)
+        c.extend(TrapdoorCore)
       }
     }
 
